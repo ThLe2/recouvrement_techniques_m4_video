@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vidéo — Capsule — Négocier et confirmer l&#x27;accord</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700;900&family=Nunito:wght@400;500;600;700&display=swap');
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy:#0d2b56;--blue:#1452a3;--sky:#e8f1fc;--teal:#0f766e;
+  --amber:#b45309;--amber-lt:#fef3c7;--green:#166534;--green-lt:#dcfce7;
+  --text:#1a1f2e;--muted:#64748b;--border:#e2e8f0;--bg:#f5f7fb;
+}
+html { scroll-behavior:smooth; }
+body { font-family:'Nunito',sans-serif; background:var(--bg); color:var(--text); line-height:1.65; font-size:16px; }
+.bandeau { background:#b91c1c; color:white; text-align:center; padding:7px 16px; font-size:11px; font-weight:700; letter-spacing:.07em; text-transform:uppercase; }
+.hero { background:var(--navy); color:white; padding:44px 24px 36px; text-align:center; position:relative; overflow:hidden; }
+.hero::before { content:''; position:absolute; inset:0;
+  background: radial-gradient(ellipse 70% 60% at 15% 50%, rgba(20,82,163,.45) 0%, transparent 70%),
+              radial-gradient(ellipse 50% 70% at 85% 30%, rgba(15,118,110,.3) 0%, transparent 70%); }
+.hero-tag { display:inline-block; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); border-radius:30px; padding:4px 14px; font-size:11px; font-weight:700; letter-spacing:.1em; text-transform:uppercase; margin-bottom:14px; position:relative; }
+.hero h1 { font-family:'Fraunces',serif; font-size:clamp(22px,4vw,36px); font-weight:900; line-height:1.15; margin-bottom:8px; position:relative; }
+.hero-sub { font-size:14px; opacity:.75; max-width:480px; margin:0 auto; position:relative; }
+.hero-meta { display:inline-flex; gap:16px; flex-wrap:wrap; justify-content:center; margin-top:16px; position:relative; }
+.hero-chip { display:flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.2); border-radius:20px; padding:5px 12px; font-size:12px; font-weight:600; }
+.wrap { max-width:820px; margin:0 auto; padding:32px 20px 64px; }
+.player-card { background:white; border:1px solid var(--border); border-radius:16px; overflow:hidden; box-shadow:0 4px 24px rgba(13,43,86,.1); margin-bottom:28px; }
+.player-info { display:flex; align-items:center; justify-content:space-between; padding:14px 20px; border-bottom:1px solid var(--border); flex-wrap:wrap; gap:8px; }
+.player-title { font-size:15px; font-weight:700; color:var(--navy); }
+.player-badges { display:flex; gap:8px; flex-wrap:wrap; }
+.pbadge { display:inline-flex; align-items:center; gap:4px; padding:3px 10px; border-radius:20px; font-size:11px; font-weight:700; }
+.pbadge.dur { background:var(--sky); color:var(--blue); }
+.pbadge.res { background:var(--green-lt); color:var(--green); }
+.pbadge.mod { background:var(--amber-lt); color:var(--amber); }
+.player-frame { position:relative; padding-bottom:56.25%; height:0; overflow:hidden; background:#000; }
+.player-frame video { position:absolute; top:0; left:0; width:100%; height:100%; display:block; }
+.player-bar { display:flex; align-items:center; gap:10px; padding:11px 20px; border-top:1px solid var(--border); font-size:13px; color:var(--muted); flex-wrap:wrap; }
+.player-bar label { font-weight:700; color:var(--navy); }
+.player-bar select { font-family:inherit; font-size:13px; font-weight:600; color:var(--navy); background:#fff;
+  border:1.5px solid var(--border); border-radius:8px; padding:5px 9px; cursor:pointer; }
+.player-bar select:focus { outline:none; border-color:var(--blue); box-shadow:0 0 0 3px rgba(20,82,163,.12); }
+.player-erreur { display:none; margin:0 20px 18px; padding:12px 15px; border-left:3px solid #b91c1c; background:#fef2f2;
+  border-radius:7px; font-size:13.5px; color:var(--text); }
+.player-erreur.on { display:block; }
+footer { background:var(--navy); color:rgba(255,255,255,.75); text-align:center; padding:32px 20px; font-size:13px; line-height:1.9; }
+.footer-brand { font-family:'Fraunces',serif; font-size:22px; font-weight:900; color:#7dd3fc; margin-bottom:4px; }
+.footer-module { font-weight:700; color:white; font-size:14px; margin-bottom:2px; }
+.footer-sep { width:40px; height:2px; background:rgba(255,255,255,.2); margin:12px auto; border-radius:2px; }
+.footer-mention { font-size:11px; opacity:.4; margin-top:8px; }
+</style>
+</head>
+<body>
+
+<div class="bandeau">Document de travail pédagogique — Ne constitue pas un document officiel</div>
+
+<header class="hero">
+  <div class="hero-tag">Formation · Banque - Assurance</div>
+  <h1>Capsule — Négocier et confirmer l&#x27;accord</h1>
+  <p class="hero-sub">Un accord gagnant-gagnant, précis, confirmé par écrit</p>
+  <div class="hero-meta">
+    <span class="hero-chip">🎬 Vidéo de formation</span>
+    <span class="hero-chip">⏱ 3 min 09 s</span>
+    <span class="hero-chip">📐 720p</span>
+    <span class="hero-chip">⚡ 0,9×</span>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="player-card">
+    <div class="player-info">
+      <span class="player-title">Négocier une solution adaptée, obtenir un engagement précis et le confirmer par e-mail</span>
+      <div class="player-badges">
+        <span class="pbadge dur">⏱ 3 min 09 s</span>
+        <span class="pbadge res">📐 720p</span>
+        <span class="pbadge mod">📚 Techniques de recouvrement · Module 4</span>
+      </div>
+    </div>
+
+    <div class="player-frame">
+      <video id="player" controls preload="metadata" playsinline controlsList="nodownload">
+        <source src="recouvrement_techniques_m4_video.mp4" type="video/mp4">
+        Votre navigateur ne permet pas la lecture de cette vidéo.
+      </video>
+    </div>
+
+    <div class="player-bar">
+      <label for="vitesse">Vitesse de lecture</label>
+      <select id="vitesse">
+        <option value="0.75">0,75×</option>
+        <option value="0.9" selected>0,9×</option>
+        <option value="1">1×</option>
+        <option value="1.25">1,25×</option>
+        <option value="1.5">1,5×</option>
+      </select>
+      <span>La vidéo démarre à 0,9× — vitesse recommandée pour ce module.</span>
+    </div>
+
+    <div class="player-erreur" id="erreur">
+      <b>La vidéo n'a pas pu être chargée.</b> Vérifiez que le fichier
+      <code>recouvrement_techniques_m4_video.mp4</code> se trouve bien dans le même dossier que cette page.
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">TMK Performances</div>
+  <div class="footer-module">Formation — Ressource vidéo</div>
+  <div class="footer-sep"></div>
+  <div>Contenu élaboré à des fins de formation professionnelle.</div>
+  <div class="footer-mention">Document de travail pédagogique.</div>
+</footer>
+
+<script>
+(function () {
+  var VITESSE_PAR_DEFAUT = 0.9;
+  var player  = document.getElementById('player');
+  var vitesse = document.getElementById('vitesse');
+  var erreur  = document.getElementById('erreur');
+
+  function appliquerVitesse() {
+    var v = parseFloat(vitesse.value);
+    if (player.playbackRate !== v) { player.playbackRate = v; }
+  }
+  player.addEventListener('loadedmetadata', function () {
+    player.playbackRate = VITESSE_PAR_DEFAUT;
+  });
+  player.addEventListener('play', appliquerVitesse);
+  vitesse.addEventListener('change', appliquerVitesse);
+
+  player.addEventListener('error', function () { erreur.classList.add('on'); });
+  var src = player.querySelector('source');
+  if (src) { src.addEventListener('error', function () { erreur.classList.add('on'); }); }
+})();
+</script>
+
+</body>
+</html>
